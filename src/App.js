@@ -59,7 +59,7 @@ export default function App() {
                                 required
                                 pattern={autocompleteCities.join("|")}
                                 autoComplete="off"
-                                className={"px-4 py-3 rounded-lg"}
+                                className={"px-4 py-3 rounded-lg customInput"}
                             />
                             <datalist id="places">
                                 {autocompleteCities.map((city, i) => (
@@ -72,6 +72,7 @@ export default function App() {
                 </form>
             ) : (
                 <div className="flex flex-col gap-2 mt-4 items-center justify-center">
+                    <p>Temperature in <span className="font-bold text-purple-700">{finalCity}</span></p>
                     {data &&
                         <div className="flex flex-row gap-4 items-center justify-center">
                             <img src={`/images/${data?.weather?.[0]?.main}.svg`} alt="weather icon"/>
